@@ -1,0 +1,88 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Server",
+			"type": "node",
+			"request": "launch",
+			"cwd": "${workspaceFolder}/Server",
+			"runtimeExecutable": "npm",
+			"runtimeArgs": ["run", "start"],
+			"preLaunchTask": "build:server",
+			"outFiles": ["${workspaceFolder}/Server/dist/**/*.js"],
+			"sourceMaps": true,
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen",
+			"skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+			"presentation": {
+				"group": "local",
+				"order": 2
+			}
+		},
+		{
+			"name": "Interface",
+			"type": "msedge",
+			"request": "launch",
+			"url": "http://localhost:5173",
+			"webRoot": "${workspaceFolder}/Interface",
+			"preLaunchTask": "dev:interface",
+			"sourceMaps": true,
+			"presentation": {
+				"group": "local",
+				"order": 3
+			}
+		},
+		{
+			"name": "Server (Codespaces)",
+			"type": "node",
+			"request": "launch",
+			"cwd": "${workspaceFolder}/Server",
+			"runtimeExecutable": "npm",
+			"runtimeArgs": ["run", "start"],
+			"preLaunchTask": "build:server",
+			"outFiles": ["${workspaceFolder}/Server/dist/**/*.js"],
+			"sourceMaps": true,
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen",
+			"skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+			"presentation": {
+				"group": "codespaces",
+				"order": 2
+			}
+		},
+		{
+			"name": "Interface (Codespaces)",
+			"type": "node",
+			"request": "launch",
+			"cwd": "${workspaceFolder}/Interface",
+			"runtimeExecutable": "npm",
+			"runtimeArgs": ["run", "dev"],
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen",
+			"presentation": {
+				"group": "codespaces",
+				"order": 3
+			}
+		}
+	],
+	"compounds": [
+		{
+			"name": "Full Stack",
+			"configurations": ["Server", "Interface"],
+			"stopAll": true,
+			"presentation": {
+				"order": 1,
+				"group": "local"
+			}
+		},
+		{
+			"name": "Full Stack (Codespaces)",
+			"configurations": ["Server (Codespaces)", "Interface (Codespaces)"],
+			"stopAll": true,
+			"presentation": {
+				"order": 1,
+				"group": "codespaces"
+			}
+		}
+	]
+}

@@ -1,0 +1,14 @@
+{
+	"svg.preview.background": "editor",
+	"editor.tabSize": 8,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"typescript.enablePromptUseWorkspaceTsdk": true
+}

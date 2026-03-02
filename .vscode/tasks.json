@@ -1,0 +1,56 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build:server",
+			"type": "npm",
+			"script": "build",
+			"path": "Server",
+			"group": "build",
+			"problemMatcher": ["$tsc"],
+			"presentation": {
+				"reveal": "silent",
+				"panel": "shared"
+			}
+		},
+		{
+			"label": "dev:interface",
+			"type": "npm",
+			"script": "dev",
+			"path": "Interface",
+			"isBackground": true,
+			"problemMatcher": {
+				"owner": "vite",
+				"pattern": {
+					"regexp": "^$"
+				},
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "VITE",
+					"endsPattern": "ready in \\d+"
+				}
+			},
+			"presentation": {
+				"reveal": "silent",
+				"panel": "dedicated"
+			}
+		},
+		{
+			"label": "build:all",
+			"dependsOn": ["build:server"],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "dev:all",
+			"dependsOn": ["dev:interface"],
+			"runOptions": {
+				"runOn": "folderOpen"
+			},
+			"problemMatcher": []
+		}
+	]
+}

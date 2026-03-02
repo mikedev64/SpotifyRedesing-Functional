@@ -1,0 +1,45 @@
+{
+	"name": "spotifyclon",
+	"version": "1.0.0",
+	"description": "Clon de la plataforma de musica Spotify",
+	"type": "module",
+	"scripts": {
+		"int:dev": "npm run dev -w Interface",
+		"app:dev": "npm run start -w Application",
+		"srv:dev": "npm run start -w Server",
+		"build": "tsc --build",
+		"build:clean": "tsc --build --clean",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/PintoGamer64/SpotifyClon.git"
+	},
+	"workspaces": [
+		"Interface",
+		"Server"
+	],
+	"keywords": [
+		"Spotify",
+		"Clon",
+		"Project"
+	],
+	"author": "PintoGamer64",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/PintoGamer64/SpotifyClon/issues"
+	},
+	"homepage": "https://github.com/PintoGamer64/SpotifyClon#readme",
+	"devDependencies": {
+		"@eslint/js": "^9.0.0",
+		"eslint": "^9.0.0",
+		"eslint-config-prettier": "^9.1.0",
+		"prettier": "^3.2.0",
+		"typescript": "^5.4.0",
+		"typescript-eslint": "^8.0.0"
+	}
+}
